@@ -5,7 +5,6 @@ import "./Header.css";
 
 const Header = () => {
     const { userObj, handleLogOut } = useFirebase();
-    console.log(userObj);
     return (
         <div className="header">
             <nav>
