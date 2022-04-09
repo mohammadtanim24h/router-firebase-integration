@@ -4,7 +4,8 @@ import useFirebase from "../../hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
-    const { userObj, handleLogOut } = useFirebase();
+    const { userObj, handleLogOut , test} = useFirebase();
+    // console.log(test); // eita click handler state er updated value ashe kina ta check korar jonno pathano hoise.
     return (
         <div className="header">
             <nav>
