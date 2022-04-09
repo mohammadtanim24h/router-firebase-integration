@@ -4,8 +4,8 @@ import useFirebase from "../../hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
-    const { user } = useFirebase();
-    console.log(user);
+    const { userObj, handleLogOut } = useFirebase();
+    console.log(userObj);
     return (
         <div className="header">
             <nav>
@@ -13,7 +13,8 @@ const Header = () => {
                 <Link to="/products">Products</Link>
                 <Link to="/orders">Orders</Link>
                 <Link to="/register">Register</Link>
-                { user.uid ? <button>Logout</button> : <Link to="/login">Login</Link>}
+                <span>{userObj?.displayName && userObj?.displayName} </span>
+                { userObj?.uid ? <button onClick={handleLogOut}>Logout</button> : <Link to="/login">Login</Link>}
             </nav>
         </div>
     );
